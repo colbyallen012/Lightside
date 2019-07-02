@@ -5,9 +5,9 @@ import './NavBar.css';
 const NavBar = props => {
   return (
     <section>
-      <Button />
-      <Button />
-      <Button />
+      <Button name="People"/>
+      <Button name="Planets"/>
+      <Button name="Vehicles"/>
     </section>
   )
 }

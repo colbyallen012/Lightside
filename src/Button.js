@@ -11,7 +11,7 @@ class Button extends Component {
 
   render() {
     return(
-      <button>People</button>
+      <button>{this.props.name}</button>
     )
   }
 }

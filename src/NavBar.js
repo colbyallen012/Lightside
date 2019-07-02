@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Button from './Button';
 import './NavBar.css';
 
 const NavBar = props => {
   return (
     <section>
-      <Button name="People"/>
-      <Button name="Planets"/>
-      <Button name="Vehicles"/>
+      <button >People</button>
+      <button>Planets</button>
+      <button>Vehicles</button>
+      <button>Favorites</button>
     </section>
   )
 }

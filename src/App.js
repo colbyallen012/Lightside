@@ -66,8 +66,8 @@ class App extends Component {
           <h1>Lightside</h1>
         </header>
         <ScrollText movieInfo={ this.state.movie }/>
-        <NavBar />
-        <CardContainer />
+        // <NavBar />
+        <CardContainer people={ this.state.people } vehicles={ this.state.vehicles } planets={ this.state.planets }/>
       </div>
     )
   }

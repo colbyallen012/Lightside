@@ -4,16 +4,29 @@ import ScrollText from './ScrollText';
 import NavBar from './NavBar';
 import CardContainer from './CardContainer';
 
+import mockMovieData from './mockMovieData';
+import mockPeopleData from './mockPeopleData';
+import mockPlanetsData from './mockPlanetsData';
+import mockVehiclesData from './mockVehiclesData';
+
+
 class App extends Component {
   constructor() {
     super ();
     this.state = {
-      people: [],
-      planets: [],
-      vehicles: [],
+      movie: mockMovieData.results[0],
+      people: mockPeopleData.results,
+      planets: mockPlanetsData.results,
+      vehicles: mockVehiclesData.results,
       favorites: [],
       error: ''
     }
+  }
+
+  componentDidMount() {
+    const randomNumber = Math.floor(Math.random() * mockMovieData.results.length)
+    // this.setState({ movie: mockMovieData.results[randomNumber] })
+    this.setState( { movie: mockMovieData.results[randomNumber] });
   }
 
   // componentDidMount() {
@@ -22,21 +35,28 @@ class App extends Component {
   //   fetch(peopleUrl)
   //     .then(response => response.json())
   //     .then(peopleData => this.setState({ people: peopleData.results }))
-  //     .catch(error => this.setState({ error }))
+  //     .catch(error => this.setState({ error: error.message }))
 
   //   const planetUrl = "https://swapi.co/api/planets/";
 
   //   fetch(planetUrl)
   //     .then(response => response.json())
   //     .then(planetData => this.setState({ planets: planetData.results }))
-  //     .catch(error => this.setState({ error }))
+  //     .catch(error => this.setState({ error: error.message }))
 
   //   const vehicleUrl = "https://swapi.co/api/vehicles/";
 
   //   fetch(vehicleUrl)
   //     .then(response => response.json())
   //     .then(vehicleData => this.setState({ vehicles: vehicleData.results }))
-  //     .catch(error => this.setState({ error }))
+  //     .catch(error => this.setState({ error: error.message }))
+
+  //   const movieUrl = "https://swapi.co/api/films/"
+
+  //   fetch(movieUrl)
+  //     .then(response => response.json())
+  //     .then(movieData => this.setState({ movies: movieData.results }))
+  //     .catch(error => this.setState({ error: error.message }))
   // }
 
   render() {
@@ -45,7 +65,7 @@ class App extends Component {
         <header>
           <h1>Lightside</h1>
         </header>
-        <ScrollText />
+        <ScrollText movieInfo={ this.state.movie }/>
         <NavBar />
         <CardContainer />
       </div>

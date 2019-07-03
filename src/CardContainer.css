@@ -1,7 +1,0 @@
-.card-area{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: inherit;
-  justify-items: space-between;
-  height: 100%;
-}

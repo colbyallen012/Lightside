@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import ScrollText from './ScrollText';
 import NavBar from './NavBar';
-import CardContainer from './NavBar';
 
 import mockMovieData from './mockMovieData';
 import mockPeopleData from './mockPeopleData';

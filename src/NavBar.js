@@ -1,39 +1,35 @@
 import React, { Component } from 'react';
+import {Route, NavLink} from 'react-router-dom';
+import Landing from './Landing';
 import Card from './Card';
+import mockPeopleData from './mockPeopleData'
+import mockPlanetsData from './mockPlanetsData'
+import mockVehicleData from './mockVehiclesData'
 import './NavBar.css'
-import CardContainer from './CardContainer';
 
 class NavBar extends Component {
   constructor() {
     super();
     this.state = {
-      activeButton: ''
-    }
-  }
 
-  findContent = e => {
-    this.setState({ activeButton: e.target.textContent })
+    }
   }
 
   render() {
     return (
       <main>
-        <button 
-          onClick={event => this.findContent(event)}
-        >People</button>
-        <button
-          onClick={event => this.findContent(event)}
-        >Planets</button>
-        <button
-          onClick={event => this.findContent(event)}
-        >Vehicles</button>
-        <button
-          onClick={event => this.findContent(event)}
-        >Favorites</button>
-      <section>
-        {this.state.activeButton === 'People' && <CardContainer content={this.props.people} />}
-        {/* {this.state.activeButton === 'Planets' && <CardContainer content={this.props.planets} />} */}
-      </section>
+        <section className='nav'>
+          <NavLink to='/people' className='nav'>People</NavLink>
+          <NavLink to='/planets' className='nav'>Planets</NavLink>
+          <NavLink to='/vehicles' className='nav'>Vehicles</NavLink>
+          <NavLink to='/favorites' className='nav'>Favorites</NavLink>
+        </section>
+        <section className='card-container'>
+          <Route exact path='/' component={Landing} />
+          <Route exact path='/People' render={() => <Card data={mockPeopleData.results}/>} />
+          <Route exact path='/Planets' render={() => <Card data={mockPlanetsData.results}/>} />          
+          <Route exact path='/Vehicles' render={() => <Card data={mockVehicleData.results}/>} />
+        </section>
       </main>
     )
   }

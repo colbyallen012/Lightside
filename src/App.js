@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ScrollText from './ScrollText';
 import NavBar from './NavBar';
-import CardContainer from './CardContainer';
+import CardContainer from './NavBar';
 
 import mockMovieData from './mockMovieData';
 import mockPeopleData from './mockPeopleData';
@@ -66,8 +66,7 @@ class App extends Component {
           <h1>Lightside</h1>
         </header>
         <ScrollText movieInfo={ this.state.movie }/>
-        // <NavBar />
-        <CardContainer people={ this.state.people } vehicles={ this.state.vehicles } planets={ this.state.planets }/>
+        <NavBar people={ this.state.people } vehicles={ this.state.vehicles } planets={ this.state.planets }/>
       </div>
     )
   }

@@ -4,11 +4,10 @@ import './ScrollText.css';
 const ScrollText = ({ movieInfo }) => {
   return (
     <aside>
-      <marquee 
+      <marquee className='crawl-container' 
         behavior="scroll" 
         direction="up" 
-        // style="height: 800px;"
-        scrollamount="1"
+        scrollamount="2"
       >
       { movieInfo.opening_crawl }
       </marquee>

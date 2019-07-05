@@ -7,16 +7,16 @@ const Card = ({data}) => {
       return (
       <div className="Card">
         <h3>{name}</h3>
-        <p>{birth_year}</p>
-        <p>{gender}</p>
-        <p>{height}</p>
-        <p>{eye_color}</p>
-        <p>{terrain}</p>
-        <p>{diameter}</p>
-        <p>{population}</p>
-        <p>{model}</p>
-        <p>{vehicle_class}</p>
-        <p>{passengers}</p>
+        <p>{birth_year && <span>Birth Year:</span>} {birth_year}</p>
+        <p>{gender && <span>Gender:</span>} {gender}</p>
+        <p>{height && <span>Height:</span>} {height}</p>
+        <p>{eye_color && <span>Eye Color:</span>} {eye_color}</p>
+        <p>{terrain && <span>Terrain:</span>} {terrain}</p>
+        <p>{diameter && <span>Diameter:</span>} {diameter}</p>
+        <p>{population && <span>Population:</span>} {population}</p>
+        <p>{model && <span>Model:</span>} {model}</p>
+        <p>{vehicle_class && <span>Vehicle Class:</span>} {vehicle_class}</p>
+        <p>{passengers && <span>Passengers:</span>} {passengers}</p>
       </div>
       )
   })

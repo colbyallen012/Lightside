@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ScrollText from './ScrollText';
 import NavBar from './NavBar';
-import CardContainer from './NavBar';
+import Logo from './Star_Wars_logo-1.png'
 
 import mockMovieData from './mockMovieData';
 import mockPeopleData from './mockPeopleData';
@@ -63,7 +63,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <h1>Lightside</h1>
+          <img className='sw-logo' src={Logo} />
         </header>
         <ScrollText movieInfo={ this.state.movie }/>
         <NavBar people={ this.state.people } vehicles={ this.state.vehicles } planets={ this.state.planets }/>

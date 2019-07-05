@@ -1,4 +1,13 @@
 aside {
   background-color: pink;
   grid-area: 1 / 1 / 6 / 2;
+  height: 100%;
+}
+
+.crawl-container {
+  margin-top: 50px;
+  font-size: 25px;
+  padding: 10px;
+  height: 300px;
+  perspective: 150px;
 }

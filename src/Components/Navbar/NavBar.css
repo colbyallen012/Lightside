@@ -25,23 +25,31 @@ a.nav:hover {
   color: #ffd700;
 }
 
+a.nav:focus {
+  color: #ffd700;
+}
+
 img {
   height: 40px;
   padding: 5px;
 }
 
-a.nav:hover .r2d2 {
+a.nav:hover .r2d2,
+a.nav:focus .r2d2 {
   content: url(../../Images/hover-r2d2.svg);
 }
 
-a.nav:hover .dStar {
+a.nav:hover .dStar,
+a.nav:focus .dStar {
   content: url(../../Images/hover-death-star.svg);
 }
 
-a.nav:hover .mFalcon {
+a.nav:hover .mFalcon,
+a.nav:focus .mFalcon {
   content: url(../../Images/hover-millennium-falcon.svg);
 }
 
-a.nav:hover .heart {
+a.nav:hover .heart,
+a.nav:focus .heart {
   content: url(../../Images/hover-heart.svg);
 }

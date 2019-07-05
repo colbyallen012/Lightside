@@ -30,7 +30,7 @@ class NavBar extends Component {
     return (
       <main>
         <section className='nav'>
-          <NavLink to='/people' className='nav'>People <img className='r2d2' src={r2d2}/></NavLink>
+          <NavLink to='/people' className='nav' activeClassName='active'>People <img className='r2d2' src={r2d2}/></NavLink>
           <NavLink to='/planets' className='nav'>Planets<img className='dStar' src={dStar}/> </NavLink>
           <NavLink to='/vehicles' className='nav'>Vehicles <img className='mFalcon' src={mFalcon}/></NavLink>
           <NavLink to='/favorites' className='nav'>Favorites <img className='heart' src={heart}/></NavLink>

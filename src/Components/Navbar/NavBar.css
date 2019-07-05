@@ -1,15 +1,14 @@
 main {
-  background-color: green;
   grid-area: 2 / 2 / 6 / 6;
-  height: 100%;
   text-align: center;
 }
 
 .nav, .card-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-items: space-between;
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-items: space-between;
 }
 
 a.nav {

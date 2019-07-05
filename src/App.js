@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import ScrollText from './ScrollText';
-import NavBar from './NavBar';
-import Logo from './Star_Wars_logo-1.png'
+import ScrollText from './Components/ScrollText/ScrollText';
+import NavBar from './Components/Navbar/NavBar';
+import Logo from './Images/Star_Wars_logo-1.png'
 
-import mockMovieData from './mockMovieData';
-import mockPeopleData from './mockPeopleData';
-import mockPlanetsData from './mockPlanetsData';
-import mockVehiclesData from './mockVehiclesData';
+import mockMovieData from './Data/mockMovieData';
+import mockPeopleData from './Data/mockPeopleData';
+import mockPlanetsData from './Data/mockPlanetsData';
+import mockVehiclesData from './Data/mockVehiclesData';
 
 
 class App extends Component {

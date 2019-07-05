@@ -3,6 +3,7 @@ import './App.css';
 import ScrollText from './Components/ScrollText/ScrollText';
 import NavBar from './Components/Navbar/NavBar';
 import Logo from './Images/Star_Wars_logo-1.png'
+import { Route, NavLink } from 'react-router-dom';
 
 import mockMovieData from './Data/mockMovieData';
 import mockPeopleData from './Data/mockPeopleData';

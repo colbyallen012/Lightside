@@ -18,7 +18,7 @@ const Card = ({data, addFavorite}) => {
         <p key={model}>{model && <span>Model:</span>} {model}</p>
         <p key={vehicle_class}>{vehicle_class && <span>Vehicle Class:</span>} {vehicle_class}</p>
         <p key={passengers}>{passengers && <span>Passengers:</span>} {passengers}</p>
-        <button className="favoriteCard" onClick={(e) => addFavorite(this)}>
+        <button className="favoriteCard" onClick={(e) => addFavorite(data.find(card => card.name === name))}>
           <img className="grayHeart" src={grayHeart} />
         </button>
       </div>

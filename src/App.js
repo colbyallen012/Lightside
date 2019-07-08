@@ -19,7 +19,6 @@ class App extends Component {
       people: mockPeopleData.results,
       planets: mockPlanetsData.results,
       vehicles: mockVehiclesData.results,
-      favorites: [],
       error: ''
     }
   }
@@ -60,6 +59,12 @@ class App extends Component {
   //     .catch(error => this.setState({ error: error.message }))
   // }
 
+  // addFavorite = (favorite) => {
+  //   const newFavorite = {...favorite, id: Date.now()};
+  //   const favorites = [...this.state.favorites, newFavorite];
+  //   this.setState({ favorites });
+  // }
+
   render() {
     return (
       <div className="App">
@@ -67,7 +72,7 @@ class App extends Component {
           <img className='sw-logo' src={Logo} />
         </header>
         <ScrollText movieInfo={ this.state.movie }/>
-        <NavBar people={ this.state.people } vehicles={ this.state.vehicles } planets={ this.state.planets }/>
+        <NavBar people={ this.state.people } vehicles={ this.state.vehicles } planets={ this.state.planets } />
       </div>
     )
   }

@@ -1,7 +1,8 @@
 import React from 'react';
 import './Card.css';
+import grayHeart from '../../Images/gray-heart.svg';
 
-const Card = ({data}) => {
+const Card = ({data, addFavorite}) => {
   const displayItems = data.map((item, index) => {
     const {name, birth_year, gender, height, eye_color, terrain, diameter, population, model, vehicle_class , passengers} = item;
       return (
@@ -17,6 +18,9 @@ const Card = ({data}) => {
         <p key={model}>{model && <span>Model:</span>} {model}</p>
         <p key={vehicle_class}>{vehicle_class && <span>Vehicle Class:</span>} {vehicle_class}</p>
         <p key={passengers}>{passengers && <span>Passengers:</span>} {passengers}</p>
+        <button className="favoriteCard" onClick={(e) => addFavorite(this)}>
+          <img className="grayHeart" src={grayHeart} />
+        </button>
       </div>
       )
   })

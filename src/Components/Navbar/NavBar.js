@@ -27,11 +27,10 @@ class NavBar extends Component {
   }
 
   addFavorite = (e) => {
-    const favorite = 'f';
-    console.log(e)
-    const newFavorite = {favorite, id: Date.now()};
-    const favorites = [...this.state.favorites, newFavorite];
+    const favorite = e;
+    const favorites = [...this.state.favorites, favorite];
     this.setState({ favorites });
+    console.log(this.state.favorites)
   }
 
   render() {
@@ -48,7 +47,7 @@ class NavBar extends Component {
           <Route exact path='/People' render={() => <Card data={mockPeopleData.results} addFavorite={this.addFavorite}/>} />
           <Route exact path='/Planets' render={() => <Card data={mockPlanetsData.results} addFavorite={this.addFavorite}/>} />
           <Route exact path='/Vehicles' render={() => <Card data={mockVehicleData.results} addFavorite={this.addFavorite}/>} />
-          <Route exact path='/Favorites' render={() => <Card data={mockVehicleData.results} addFavorite={this.addFavorite}/>} />
+          <Route exact path='/Favorites' render={() => <Card data={this.state.favorites} addFavorite={this.addFavorite}/>} />
         </section>
       </main>
     )

@@ -26,11 +26,25 @@ class NavBar extends Component {
     }
   }
 
-  addFavorite = (e) => {
-    const favorite = e;
-    const favorites = [...this.state.favorites, favorite];
-    this.setState({ favorites });
-    console.log(this.state.favorites)
+  addFavorite = (selectedFavorite) => {
+    const updatedFavorites = [...this.state.favorites, selectedFavorite];
+    this.setState({ favorites: updatedFavorites });
+  }
+
+  removeFavorite = (selectedFavorite) => {
+    let filteredFavorites = this.state.favorites.filter(favorite => favorite.name !== selectedFavorite.name);
+    this.setState({ favorites: filteredFavorites });
+  }
+
+  toggleFavorite = (data, name) => {
+    const selectedFavorite = data.find(card => card.name === name)
+    selectedFavorite.isFavorite = !selectedFavorite.isFavorite;
+    console.log(selectedFavorite)
+    if (selectedFavorite.isFavorite) {
+      this.addFavorite(selectedFavorite)
+    } else {
+      this.removeFavorite(selectedFavorite)
+    }
   }
 
   render() {
@@ -40,14 +54,14 @@ class NavBar extends Component {
           <NavLink to='/people' className='nav' activeClassName='active'>People <img className='r2d2' src={r2d2}/></NavLink>
           <NavLink to='/planets' className='nav'>Planets<img className='dStar' src={dStar}/> </NavLink>
           <NavLink to='/vehicles' className='nav'>Vehicles <img className='mFalcon' src={mFalcon}/></NavLink>
-          <NavLink to='/favorites' className='nav'>Favorites <img className='heart' src={heart}/></NavLink>
+          <NavLink to='/favorites' className='nav'>Favorites ({this.state.favorites.length})</NavLink>
         </section>
           <Route exact path='/' component={Landing} />
         <section className='card-container'>
-          <Route exact path='/People' render={() => <Card data={mockPeopleData.results} addFavorite={this.addFavorite}/>} />
-          <Route exact path='/Planets' render={() => <Card data={mockPlanetsData.results} addFavorite={this.addFavorite}/>} />
-          <Route exact path='/Vehicles' render={() => <Card data={mockVehicleData.results} addFavorite={this.addFavorite}/>} />
-          <Route exact path='/Favorites' render={() => <Card data={this.state.favorites} addFavorite={this.addFavorite}/>} />
+          <Route exact path='/People' render={() => <Card data={mockPeopleData.results} toggleFavorite={this.toggleFavorite} isFavorite={false}  />} />
+          <Route exact path='/Planets' render={() => <Card data={mockPlanetsData.results} toggleFavorite={this.toggleFavorite} isFavorite={false}  />} />
+          <Route exact path='/Vehicles' render={() => <Card data={mockVehicleData.results} toggleFavorite={this.toggleFavorite} isFavorite={false}  />} />
+          <Route exact path='/Favorites' render={() => <Card data={this.state.favorites} toggleFavorite={this.toggleFavorite} isFavorite={false} />} />
         </section>
       </main>
     )

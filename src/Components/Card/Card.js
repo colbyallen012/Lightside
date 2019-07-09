@@ -1,13 +1,14 @@
 import React from 'react';
 import './Card.css';
 import grayHeart from '../../Images/gray-heart.svg';
+import favoriteHeart from '../../Images/favorite.svg'
 
-const Card = ({data, addFavorite}) => {
+const Card = ({data, toggleFavorite, isFavorite}) => {
   const displayItems = data.map((item, index) => {
     const {name, birth_year, gender, height, eye_color, terrain, diameter, population, model, vehicle_class , passengers} = item;
       return (
       <div className="Card" key={name}>
-        <h3 key={name, index}>{name}</h3>
+        <h3 key={name, index} >{name}</h3>
         <p key={birth_year}>{birth_year && <span>Birth Year:</span>} {birth_year}</p>
         <p key={gender}>{gender && <span>Gender:</span>} {gender}</p>
         <p key={height}>{height && <span>Height:</span>} {height}</p>
@@ -18,11 +19,14 @@ const Card = ({data, addFavorite}) => {
         <p key={model}>{model && <span>Model:</span>} {model}</p>
         <p key={vehicle_class}>{vehicle_class && <span>Vehicle Class:</span>} {vehicle_class}</p>
         <p key={passengers}>{passengers && <span>Passengers:</span>} {passengers}</p>
-        <button className="favoriteCard" onClick={(e) => addFavorite(data.find(card => card.name === name))}>
-          <img className="grayHeart" src={grayHeart} />
+        <button className='favoriteButton'
+        onClick={(e) => toggleFavorite(data, name)} >
+          <img 
+            src={grayHeart || favoriteHeart}
+          />
         </button>
       </div>
-      )
+    )
   })
   
   return (

@@ -4,13 +4,7 @@ import ScrollText from './Components/ScrollText/ScrollText';
 import NavBar from './Components/Navbar/NavBar';
 import Logo from './Images/Star_Wars_logo-1.png'
 import { Route, NavLink } from 'react-router-dom';
-
 import { getMovieData, getPeopleData, getPlanetData, getVehicleData } from './apiCalls';
-
-// import mockMovieData from './Data/mockMovieData';
-// import mockPeopleData from './Data/mockPeopleData';
-// import mockPlanetsData from './Data/mockPlanetsData';
-// import mockVehiclesData from './Data/mockVehiclesData';
 
 
 class App extends Component {
@@ -25,40 +19,26 @@ class App extends Component {
     }
   }
 
-  async componentDidMount() {
-    const randomNumber = Math.floor(Math.random() * 7);
-    try {
-      const movies = await getMovieData()
-      const movie = movies.results[randomNumber]
-      this.setState({ movie: movie })
-    } catch (error) {
-      this.setState({error: error.message})
-    }
+componentDidMount() {
+    getPeopleData()
+      .then(people => this.setState({people: people.results}))
+      .catch(error => this.setState({ error: error.message }))    
 
-    try {
-      const people = await getPeopleData();
-      const peopleData = people.results;
-      this.setState({people: peopleData})
-    } catch (error) {
-      this.setState({error: error.message})
-    }
+    getPlanetData()
+      .then(planets => this.setState({ planets: planets.results }))
+      .catch(error => this.setState({ error: error.message }))
 
-    try {
-      const planet = await getPlanetData();
-      const planetData = planet.results;
-      this.setState({planets: planetData})
-    } catch (error) {
-      this.setState({error: error.message})
-    }
+    getVehicleData()
+      .then(vehicles => this.setState({ vehicles: vehicles.results }))
+      .catch(error => this.setState({ error: error.message }))
 
-    try {
-      const vehicle = await getVehicleData();
-      const vehicleData = vehicle.results;
-      this.setState({vehicles: vehicleData})
-    } catch (error) {
-      this.setState({error: error.message})
-    }
+    const randomNumber = Math.floor(Math.random() * 7)
+
+    getMovieData()
+      .then(movies => this.setState({ movie: movies.results[randomNumber] }))
+      .catch(error => this.setState({ error: error.message }))
   }
+
 
   render() {
     return (

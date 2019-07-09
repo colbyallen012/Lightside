@@ -3,8 +3,7 @@ import './App.css';
 import ScrollText from './Components/ScrollText/ScrollText';
 import NavBar from './Components/Navbar/NavBar';
 import Logo from './Images/Star_Wars_logo-1.png'
-import { Route, NavLink } from 'react-router-dom';
-import { getMovieData, getPeopleData, getPlanetData, getVehicleData } from './apiCalls';
+import { getMovieData, getPeopleData, getPlanetData, getVehicleData } from './Components/API/apiCalls';
 
 
 class App extends Component {
@@ -44,7 +43,7 @@ componentDidMount() {
     return (
       <div className="App">
         <header>
-          <img className='sw-logo' src={Logo} />
+          <img alt='star wars logo' className='sw-logo' src={Logo} />
         </header>
         <ScrollText movieInfo={ this.state.movie }/>
         <NavBar people={ this.state.people } vehicles={ this.state.vehicles } planets={ this.state.planets } />

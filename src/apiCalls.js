@@ -1,43 +1,23 @@
-export const getMovieData = async () => {
-    try {
-        const response = await fetch('https://swapi.co/api/films/');
-        const movies = await response.json();
-
-        return movies;
-    } catch (error) {
-        throw Error('Error fetching movies');
-    }
+export const getPeopleData = () => {
+    return fetch("https://swapi.co/api/people/")
+      .then(response => response.json())
+      .catch(error => error)
 }
 
-export const getPeopleData = async () => {
-    try {
-        const response = await fetch('https://swapi.co/api/people/');
-        const people = await response.json();
-
-        return people;
-    } catch (error) {
-        throw Error('Error fetching people');
-    }
+export const getPlanetData = () => {
+    return fetch("https://swapi.co/api/planets/")
+      .then(response => response.json())
+      .catch(error => error)
 }
 
-export const getPlanetData = async () => {
-    try {
-        const response = await fetch('https://swapi.co/api/planets/');
-        const planets = await response.json();
-
-        return planets;
-    } catch (error) {
-        throw Error('Error fetching planets');
-    }
+export const getVehicleData = () => {
+    return fetch("https://swapi.co/api/vehicles/")
+      .then(response => response.json())
+      .catch(error => error)
 }
 
-export const getVehicleData = async () => {
-    try {
-        const response = await fetch('https://swapi.co/api/vehicles/');
-        const vehicles = await response.json();
-
-        return vehicles;
-    } catch (error) {
-        throw Error('Error fetching vehicles');
-    }
+export const getMovieData = () => {
+    return fetch("https://swapi.co/api/films/")
+      .then(response => response.json())
+      .catch(error => error)
 }

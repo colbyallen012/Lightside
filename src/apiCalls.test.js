@@ -37,6 +37,41 @@ describe ('apiCalls', () => {
 
       await expect(getMovieData()).rejects.toEqual(Error('Error fetching movies'));
     });
-
   })
+
+  describe('getPeopleData', () => {
+    let mockPeople;
+
+    beforeEach(() => {
+      mockPeople = [
+        {name: "Luke Skywalker", birth_year: "19BBY", gender: "male", height: "172", eye_color: "blue"},
+        {name: "C-3PO", birth_year: "112BBY", gender: "n/a", height: "167", eye_color: "yellow"}
+      ];
+
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          json: () => Promise.resolve(mockIdea)
+        });
+      });
+    });
+
+    it('should be called with the correct URL', async () => {
+      const expected = 'https://swapi.co/api/people/';
+      getPeopleData();
+      expect(window.fetch).toHaveBeenCalledWith(expected)
+    });
+
+    it.skip('should return a parsed response', async () => {
+      const result = await getPeopleData();
+      expect(result).toEqual(mockPeople)
+    });
+
+    it('should return an error response', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.rejects()
+      });
+
+      await expect(getPeopleData()).rejects.toEqual(Error('Error fetching people'));
+    });
+  });
 })

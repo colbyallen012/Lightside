@@ -5,3 +5,12 @@
   margin: 10px;
   width: 220px;
 }
+
+.favoriteButton {
+  border: none;
+}
+
+.favoriteHeart {
+  /* content: url('../../Images/favorite.svg') */
+  background-color: pink;
+}

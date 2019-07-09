@@ -21,7 +21,8 @@ class App extends Component {
 componentDidMount() {
     getPeopleData()
       .then(people => this.setState({people: people.results}))
-      .catch(error => this.setState({ error: error.message }))    
+      .catch(error => this.setState({ error: error.message })) 
+         
 
     getPlanetData()
       .then(planets => this.setState({ planets: planets.results }))

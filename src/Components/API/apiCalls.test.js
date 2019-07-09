@@ -31,12 +31,14 @@ describe ('apiCalls', () => {
       expect(result).toEqual(mockPeople)
     });
 
-    it.skip('should return an error response', async () => {
+    it('should return an error response', async () => {
       window.fetch = jest.fn().mockImplementation(() => {
-        return Promise.rejects()
+        return Promise.reject({
+          message: 'Error fetching people'
+        })
       });
 
-      await expect(getPeopleData()).rejects.toEqual(Error('Error fetching people'));
+     expect(getPeopleData()).rejects.toEqual(Error('Error fetching people'));
     });
   });
 
@@ -66,12 +68,14 @@ describe ('apiCalls', () => {
       expect(result).toEqual(mockPlanets)
     });
 
-    it.skip('should return an error response', async () => {
+    it('should return an error response', async () => {
       window.fetch = jest.fn().mockImplementation(() => {
-        return Promise.rejects()
+        return Promise.reject({
+          message: 'Error fetching planets'
+        })
       });
 
-      await expect(getPlanetData()).rejects.toEqual(Error('Error fetching planets'));
+      expect(getPlanetData()).rejects.toEqual(Error('Error fetching planets'));
     });
   })
 
@@ -101,12 +105,14 @@ describe ('apiCalls', () => {
       expect(result).toEqual(mockVehicles)
     });
 
-    it.skip('should return an error response', async () => {
+    it('should return an error response', async () => {
       window.fetch = jest.fn().mockImplementation(() => {
-        return Promise.rejects()
+        return Promise.reject({
+          message: 'Error fetching vehicles'
+        })
       });
 
-      await expect(getVehicleData()).rejects.toEqual(Error('Error fetching vehicles'));
+      expect(getVehicleData()).rejects.toEqual(Error('Error fetching vehicles'));
     });
     
   describe('getMovieData', () => {
@@ -135,12 +141,14 @@ describe ('apiCalls', () => {
       expect(result).toEqual(mockMovies)
     });
 
-    it.skip('should return an error response', async () => {
+    it('should return an error response', async () => {
       window.fetch = jest.fn().mockImplementation(() => {
-        return Promise.rejects()
+        return Promise.reject({
+          message: 'Error fetching movies'
+        })
       });
 
-      await expect(getMovieData()).rejects.toEqual(Error('Error fetching movies'));
+      expect(getMovieData()).rejects.toEqual(Error('Error fetching movies'));
       });
     })
   })

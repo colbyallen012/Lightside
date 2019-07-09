@@ -31,7 +31,6 @@ class NavBar extends Component {
   toggleFavorite = (data, name) => {
     const selectedFavorite = data.find(card => card.name === name)
     selectedFavorite.isFavorite = !selectedFavorite.isFavorite;
-    console.log(selectedFavorite)
     if (selectedFavorite.isFavorite) {
       this.addFavorite(selectedFavorite)
     } else {

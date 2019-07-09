@@ -29,7 +29,7 @@ describe('NavBar', () => {
       {name: 'fanta', climate: 'no'}
     ]
 
-    mockCard = {name: 'batman', climate: 'windy'};
+    mockCard = {name: 'batman', climate: 'windy', id: 1};
 
     navBarComponent = shallow(
       <NavBar 
@@ -52,5 +52,31 @@ describe('NavBar', () => {
     navBarComponent.instance().addFavorite(mockCard)
 
     expect(navBarComponent.state('favorites')).toEqual(expected);
-  })
+  });
+
+  it('should remove a card from favorites when removeFavorite is called', () => {
+    const expected = mockFavorites;
+
+    navBarComponent.instance().addFavorite(mockCard)
+    navBarComponent.instance().removeFavorite(mockCard)
+    
+    expect(navBarComponent.state('favorites')).toEqual(expected);
+  });
+
+  it('should add a card to favorites when appropriate after calling toggleFavorite', () => {
+     const expected = [...mockFavorites, mockPeople[1]];
+
+    navBarComponent.instance().toggleFavorite(mockPeople, 'Jenny');
+    
+    expect(navBarComponent.state('favorites')).toEqual(expected);
+  });
+
+  it('should remove a card to favorites when appropriate after calling toggleFavorite', () => {
+    const mockFavoritedCard = {name: 'baby', age: 98, isFavorite: true}
+    navBarComponent.setState({ favorites: [...mockFavorites, mockFavoritedCard] });
+
+   navBarComponent.instance().toggleFavorite([...mockPeople, mockFavoritedCard], 'baby');
+   
+   expect(navBarComponent.state('favorites')).toEqual(mockFavorites);
+ });
 });

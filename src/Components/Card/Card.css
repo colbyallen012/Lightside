@@ -1,9 +1,11 @@
 .Card {
   background-color: white;
+  border: 3px solid grey;
+  border-radius: 20px;
   color: black;
   height: 250px;
   margin: 10px;
-  width: 220px;
+  width: 210px;
 }
 
 .favoriteButton {

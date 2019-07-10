@@ -9,7 +9,7 @@
 }
 
 header {
-  grid-area: 1 / 2 / 2 / 6;
+  grid-area: 1 / 1 / 2 / 6;
   text-align: center;
   height: 50px;
 }

@@ -3,11 +3,16 @@ main {
   text-align: center;
 }
 
-.nav, .card-container {
+.nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-items: space-between;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
 }
 
 a.nav {

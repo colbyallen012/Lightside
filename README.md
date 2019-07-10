@@ -18,8 +18,11 @@ Colby Allen https://github.com/colbyallen012
 ![screencapture-localhost-3000-people-2019-07-09-21_03_48](https://user-images.githubusercontent.com/43159025/60937350-531cde00-a28d-11e9-8c7b-17bf18c900d2.png)
 
 ### Built With
+
 React
+
 Router
+
 Testing with Enzyme & Jest
 
 ### To Run

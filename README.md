@@ -5,6 +5,7 @@ This was a two week paired project at Turing School of Software & Design, where 
 ## Created By
 
 Jacqueline Moore https://github.com/jacquelinebelle
+
 Colby Allen https://github.com/colbyallen012
 
 ## Screenshots

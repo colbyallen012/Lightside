@@ -1,7 +1,5 @@
 # Lightside
 
-## About
-
 This was a two week paired project at Turing School of Software & Design, where we used a Star Wars API to display information using React.
 
 ## Created By
